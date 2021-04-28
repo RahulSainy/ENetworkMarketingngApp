@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-signup',
@@ -7,46 +8,9 @@ import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
   styleUrls: ['./signup.component.css'],
 })
 export class SignupComponent implements OnInit {
-  // .......
+  // ....... states in service component
+states :string[] = [];
 
-  states: string[] = [
-    'Andhra Pradesh',
-    'Arunachal Pradesh',
-    'Assam',
-    'Bihar',
-    'Chhattisgarh',
-    'Goa',
-    'Gujarat',
-    'Haryana',
-    'Himachal Pradesh',
-    'Jammu and Kashmir',
-    'Jharkhand',
-    'Karnataka',
-    'Kerala',
-    'Madhya Pradesh',
-    'Maharashtra',
-    'Manipur',
-    'Meghalaya',
-    'Mizoram',
-    'Nagaland',
-    'Odisha',
-    'Punjab',
-    'Rajasthan',
-    'Sikkim',
-    'Tamil Nadu',
-    'Telangana',
-    'Tripura',
-    'Uttarakhand',
-    'Uttar Pradesh',
-    'West Bengal',
-    'Andaman and Nicobar Islands',
-    'Chandigarh',
-    'Dadra and Nagar Haveli',
-    'Daman and Diu',
-    'Delhi',
-    'Lakshadweep',
-    'Puducherry',
-  ];
 
   // .......chnage to true
   isLinear = false;
@@ -55,23 +19,40 @@ export class SignupComponent implements OnInit {
   thirdFormGroup: FormGroup;
   hide = true;
   maxDate: Date;
-  constructor(private _formBuilder: FormBuilder) {}
+  constructor(private _formBuilder: FormBuilder,
+    private authService: AuthService) {}
+
+  
 
   ngOnInit() {
+    this.states = this.authService.states;
     this.firstFormGroup = this._formBuilder.group({
-      firstCtrl: ['', Validators.required],
+  
+      fullname: ['', Validators.required],
+      birthdate: ['', Validators.required],
+      address: ['', Validators.required],
+      city: ['', Validators.required],
+      state: ['', Validators.required],
+      postalcode: ['', Validators.required],
+      gender: ['', Validators.required],
+
+      
     });
     this.secondFormGroup = this._formBuilder.group({
-      secondCtrl: ['', Validators.required],
+      phoneno: ['', Validators.required],
     });
     this.thirdFormGroup = this._formBuilder.group({
-      thirdCtrl: ['', Validators.required],
+      refralno: ['' ,Validators.required],
     });
     this.maxDate = new Date();
     this.maxDate.setFullYear(this.maxDate.getFullYear() + 18);
   }
 
-  onSubmit(form: NgForm) {
-    console.log(form);
+  onSubmit() {
+    console.log(this.firstFormGroup);
+    console.log(this.thirdFormGroup);
+
+    console.log(this.secondFormGroup);
+
   }
 }

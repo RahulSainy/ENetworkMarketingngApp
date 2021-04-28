@@ -21,6 +21,7 @@ import { UpgradebusinessComponent } from "./upgradebusiness/upgradebusiness.comp
 import { CustomernetworkComponent } from "./mynetwork/customernetwork/customernetwork.component";
 import { BusinessnetworkComponent } from "./mynetwork/businessnetwork/businessnetwork.component";
 import { MyaccountComponent } from "./myaccount/myaccount.component";
+import { AuthService } from "./auth/auth.service";
 
 @NgModule({
   declarations: [
@@ -48,7 +49,7 @@ import { MyaccountComponent } from "./myaccount/myaccount.component";
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
