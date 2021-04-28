@@ -1,0 +1,7 @@
+.mat-form-field {
+    display: block;
+}
+
+textarea.mat-input-element.cdk-textarea-autosize {
+    height: 90px;
+}

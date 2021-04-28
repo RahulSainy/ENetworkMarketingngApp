@@ -1,0 +1,178 @@
+<mat-horizontal-stepper [linear]="isLinear" #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+
+        <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>Information</ng-template>
+            <div>
+
+                <mat-form-field appearance="outline" class="example-full-width">
+                    <mat-label>Full Name</mat-label>
+                    <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+                </mat-form-field>
+
+
+                <mat-form-field appearance="outline" class="example-full-width">
+                    <input matInput placeholder="Your birthdate" [matDatepicker]="picker" [max]="maxDate" ngModel name="birthdate" formControlName="firstCtrl" required>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+
+
+                <mat-form-field appearance="outline" class="example-full-width">
+                    <mat-label>Address</mat-label>
+                    <input matInput placeholder="Complete address" formControlName="firstCtrl" required>
+                </mat-form-field>
+
+                <!-- ........................................... -->
+                <mat-form-field appearance="outline" class="example-full-width">
+                    <mat-label>City</mat-label>
+                    <input matInput placeholder="Ex. San Francisco" formControlName="firstCtrl" required>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="example-full-width">
+                    <mat-label>State</mat-label>
+                    <mat-select formControlName="firstCtrl" required>
+                        <mat-option>None</mat-option>
+                        <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="example-full-width">
+                    <mat-label>Postal Code</mat-label>
+                    <input type="number" matInput #postalCode minlength="7" maxlength="6" placeholder="Ex. 94105" formControlName="firstCtrl" required>
+                    <mat-hint align="end">{{postalCode.value.length}} / 6</mat-hint>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="example-full-width">
+                    <mat-label>Gender</mat-label>
+                    <mat-select formControlName="firstCtrl" required>
+                        <mat-option value="one">Male</mat-option>
+                        <mat-option value="two">Female</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+
+
+                <!-- ............................................................ -->
+            </div>
+            <div>
+                <button mat-flat-button color="warn" matStepperNext>Next</button>
+            </div>
+
+        </form>
+    </mat-step>
+
+
+
+    <mat-step [stepControl]="secondFormGroup">
+
+        <form [formGroup]="secondFormGroup" fxLayoutAlign="center center" fxLayout="column">
+            <ng-template matStepLabel>verify</ng-template>
+
+            <mat-form-field appearance="outline" class="example-full-width">
+                <mat-label>Phone No.</mat-label>
+                <input type="number" matInput #phoneNo minlength="10" maxlength="10" placeholder="Ex. 94105" formControlName="secondCtrl" required>
+                <mat-hint align="end">{{phoneNo.value.length}} / 10 </mat-hint>
+            </mat-form-field>
+            <div>
+                <button mat-flat-button color="warn">Send Otp</button>
+            </div>
+
+            <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+            </div>
+
+        </form>
+    </mat-step>
+
+    <mat-step>
+        <form [formGroup]="thirdFormGroup" label="Finish" fxLayoutAlign="center center" fxLayout="column">
+            <ng-template matStepLabel>Finish</ng-template>
+
+
+            <mat-form-field appearance="outline" class="example-full-width">
+                <mat-label>Refral's Phone no.</mat-label>
+                <input type="number" matInput #phoneNo minlength="10" maxlength="10" placeholder="Ex. 94105" formControlName="thirdCtrl" required>
+                <mat-hint align="end">{{phoneNo.value.length}} / 10 </mat-hint>
+            </mat-form-field>
+
+            <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-flat-button color="warn">Register</button>
+            </div>
+        </form>
+    </mat-step>
+</mat-horizontal-stepper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <section class="signup-form">
+      <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="0px"
+       #f="ngForm"
+      (ngSubmit)="onSubmit(f)" > -->
+
+<!-- <mat-form-field  appearance="outline" >
+          <mat-label>Phone number</mat-label>
+          
+          <input type="tel" matInput placeholder="phone No"  name="phone" 
+           ngModel 
+           
+          minlength="10" 
+          maxlength="10"  
+           placeholder="Phone" 
+           phone
+           required  > -->
+
+
+<!-- ......................How TO validate for phone no????.....  -->
+
+<!-- <mat-icon matSuffix>phone</mat-icon>
+          <mat-error>Invalid Number</mat-error>
+          </mat-form-field> -->
+
+<!-- <mat-form-field  appearance="outline">
+        <mat-label>Enter your password</mat-label>
+  
+          <input required matInput minlength="6"  ngModel name="password" [type]="hide ? 'password' : 'text'">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+          <mat-error>Has to be at least 6 characters long.</mat-error>
+        </mat-form-field> -->
+
+<!--       
+        <mat-form-field appearance="outline">
+          <input matInput placeholder="Your birthdate" [matDatepicker]="picker" [max]="maxDate" ngModel name="birthdate" required>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-checkbox ngModel name="agree" required color="primary">Agree to Terms and Conditions.</mat-checkbox>
+        <button  type="submit" mat-raised-button color="primary"  [disabled]="f.invalid" >Submit</button>
+        -->
+
+<!-- <mat-spinner *ngIf="isLoading"></mat-spinner> -->
+
+<!-- 
+      </form>
+    </section> -->

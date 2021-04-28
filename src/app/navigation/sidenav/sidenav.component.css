@@ -1,0 +1,39 @@
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover,
+a:active {
+    color: lightgray;
+}
+
+.navigation-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-caption {
+    display: inline-block;
+    padding-left: 6px;
+}
+
+.white-icon {
+    color: white;
+}
+
+.material-icons {
+    background: -webkit-gradient(linear, left bottom, left top, from(rgb(27, 185, 187)), to(rgb(15, 223, 250)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* -webkit-gradient (
+      linear,
+      left top,
+      left bottom,
+      from(rgb(79, 172, 254)),
+      to(rgb(0, 242, 254))
+    ); */
+    /* color: darkcyan; */
+    /* color: black; */
+}

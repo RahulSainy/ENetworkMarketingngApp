@@ -1,0 +1,10 @@
+.mat-elevation-z4 {
+    background: linear-gradient(360deg, rgb(216, 19, 19), rgb(253, 83, 89), transparent 90px);
+    color: white;
+}
+
+p {
+    margin: 0px 31px 12px;
+    align-items: center;
+    font-size: large;
+}

@@ -1,0 +1,18 @@
+.mat-input-element:disabled,
+.mat-form-field-type-mat-native-select.mat-form-field-disabled .mat-form-field-infix::after {
+    color: black;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover,
+a:active {
+    color: lightgray;
+}
+
+ ::ng-deep.mat-dialog-container {
+    padding: 0px !important;
+}

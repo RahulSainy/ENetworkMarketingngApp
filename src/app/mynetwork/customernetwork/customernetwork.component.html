@@ -1,0 +1,47 @@
+<br />
+<div fxLayoutAlign="center center">
+    <mat-form-field fxFlex="80%">
+        <input matInput type="text" placeholder="search" />
+        <!-- (keyup)="doFilter($event.target.value)" -->
+        <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+</div>
+
+<!-- ...........template......... -->
+<div fxlayout="row wrap" style="flex-flow: row wrap; box-sizing: border-box; display: flex">
+    <div fxflex="100" fxflex.xl="25" fxflex.lg="25" fxflex.md="50" fxflex.sm="50" class="p-2" style="flex: 1 1 100%; box-sizing: border-box; max-width: 100%">
+        <mat-card fxlayout="row" fxlayoutalign="start center" class="mat-card mat-focus-indicator p-1 gradient-indigo team-member" style="
+      flex-direction: row;
+      box-sizing: border-box;
+      display: flex;
+      place-content: center flex-start;
+      align-items: center;
+    "><img src="https://media-exp1.licdn.com/dms/image/C5603AQHTlHLxVoytZQ/profile-displayphoto-shrink_200_200/0/1598470972039?e=1624492800&v=beta&t=9pVQPJmuEygoTLAula2zj5o5qNZF5GTtrEfJhcW4DD0" alt="image" class="mat-elevation-z3" />
+            <div fxlayout="column" fxlayoutalign="center center" class="w-100" style="
+        flex-direction: column;
+        box-sizing: border-box;
+        display: flex;
+        place-content: center;
+        align-items: center;
+        margin-left: 5%;
+      ">
+                <h3>Rahul Saini</h3>
+                <p class="mt-1">9752704505</p>
+                <a routerlink="." mat-icon-button="" class="mat-focus-indicator mat-icon-button mat-button-base" tabindex="0" aria-disabled="false" href="/"><span class="mat-button-wrapper"
+          ><mat-icon
+            role="img"
+            class="mat-icon notranslate material-icons mat-icon-no-color"
+            aria-hidden="true"
+            data-mat-icon-type="font"
+            >exit_to_app</mat-icon
+          ></span
+        ><span
+          matripple=""
+          class="mat-ripple mat-button-ripple mat-button-ripple-round"
+        ></span
+        ><span class="mat-button-focus-overlay"></span
+      ></a></div>
+        </mat-card>
+
+    </div>
+</div>

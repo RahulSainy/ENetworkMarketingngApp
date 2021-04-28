@@ -1,0 +1,36 @@
+.mat-card {
+    overflow: hidden;
+}
+
+.p-1 {
+    padding: .25rem!important;
+}
+
+.mat-focus-indicator,
+.mat-mdc-focus-indicator {
+    position: relative;
+}
+
+.gradient-indigo {
+    background: #303f9f!important;
+    background: linear-gradient( 50deg, #2ec6ff, #303f9f)!important;
+    color: #fff!important;
+}
+
+.team-member img {
+    width: 89px;
+    border-radius: 2px;
+}
+
+.mat-elevation-z3 {
+    box-shadow: 0 3px 3px -2px rgb(0 0 0 / 20%), 0 3px 4px 0 rgb(0 0 0 / 14%), 0 1px 8px 0 rgb(0 0 0 / 12%);
+}
+
+
+/* ..............amber gradient......... */
+
+.gradient-amber {
+    background: #e65100!important;
+    background: linear-gradient( 50deg, #ffba3a, #e65100)!important;
+    color: #fff!important;
+}

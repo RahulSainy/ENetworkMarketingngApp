@@ -1,0 +1,45 @@
+<div fxflex="100" fxflex.xl="25" fxflex.lg="25" fxflex.md="50" fxflex.sm="50" style="flex: 1 1 100%; box-sizing: border-box; max-width: 100%">
+    <br>
+    <form>
+        <div>
+            <mat-form-field appearance="outline">
+
+                <mat-label> Your Phone number</mat-label>
+                <input matInput #phoneNo value="9752704505" disabled>
+                <mat-icon matSuffix>phone</mat-icon>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Your Name</mat-label>
+                <input matInput #name value="Rahul" disabled>
+                <mat-icon matSuffix>face</mat-icon>
+            </mat-form-field>
+        </div>
+    </form>
+
+</div>
+
+<mat-card>
+    <mat-card-title>Report Problem</mat-card-title>
+    <mat-card-subtitle>Your feed back values</mat-card-subtitle>
+    <mat-card-content>
+        <form>
+            <mat-form-field appearance="outline">
+                <mat-label>Choose problem type</mat-label>
+                <mat-select>
+                    <mat-option *ngFor="let problem of problems" [value]="problem.value">
+                        {{problem.viewValue}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Explain Your Issue</mat-label>
+                <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="25"></textarea>
+            </mat-form-field>
+
+        </form>
+    </mat-card-content>
+
+
+</mat-card>

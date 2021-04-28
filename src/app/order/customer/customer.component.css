@@ -1,0 +1,122 @@
+.selectbtn {
+    float: right;
+}
+
+mat-form-field {
+    width: fit-content;
+}
+
+.example-right-align {
+    text-align: right;
+}
+
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+    display: none;
+}
+
+input.example-right-align {
+    -moz-appearance: textfield;
+}
+
+* {
+    -webkit-user-select: none;
+}
+
+@-webkit-keyframes animated {
+    from {
+        background-position: -300px 0;
+    }
+    to {
+        background-position: 300px 0;
+    }
+}
+
+.animated {
+    -webkit-animation: animated 2s linear infinite;
+    -webkit-background-clip: text;
+    background-color: #999;
+    background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0), white, rgba(255, 255, 255, 0));
+    background-repeat: no-repeat;
+    color: transparent;
+    font-family: Arial, Helvetica, Sans-serif;
+    font-size: 17px;
+    line-height: 20px;
+    position: relative;
+    text-transform: lowercase;
+    top: 1px;
+    width: 200px;
+}
+
+.thumb {
+    background-image: -webkit-linear-gradient(#fff, #d9d9d9 45%, #ccc 45%, #bbb);
+    border-radius: 5px;
+    cursor: pointer;
+    left: 2px;
+    height: 26px;
+    position: absolute;
+    top: 2px;
+    width: 35px;
+}
+
+.thumb .bar {
+    background-color: #666;
+    left: 7px;
+    height: 5px;
+    top: 11px;
+    width: 14px;
+    position: absolute;
+}
+
+.thumb .bars {
+    background-color: rgba(255, 255, 255, 0.6);
+    left: 7px;
+    height: 5px;
+    top: 12px;
+    width: 14px;
+    position: absolute;
+}
+
+.thumb .bars2 {
+    background-color: rgba(0, 0, 0, 0.6);
+    left: 7px;
+    height: 5px;
+    top: 10px;
+    width: 14px;
+    position: absolute;
+}
+
+.thumb .triangle {
+    border: 6px solid transparent;
+    border-left-color: #666;
+    left: 20px;
+    position: absolute;
+    top: 7px;
+}
+
+.thumb .triangles {
+    border: 6px solid transparent;
+    border-left-color: rgba(255, 255, 255, 0.6);
+    left: 20px;
+    position: absolute;
+    top: 8px;
+}
+
+.thumb .triangles2 {
+    border: 6px solid transparent;
+    border-left-color: rgba(0, 0, 0, 0.6);
+    left: 20px;
+    position: absolute;
+    top: 6px;
+}
+
+.container {
+    background-image: -webkit-linear-gradient(black, #222 60%, #242424 60%, #444);
+    border: 1px solid #777;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 5px;
+    padding-left: 50px;
+    position: relative;
+    width: 110px;
+}

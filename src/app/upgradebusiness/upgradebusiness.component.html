@@ -1,0 +1,130 @@
+<mat-horizontal-stepper [linear]="isLinear" #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+
+        <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>Information</ng-template>
+            <div>
+
+                <mat-form-field appearance="outline" class="example-full-width">
+
+                    <mat-label> Your Phone number</mat-label>
+                    <input matInput #phoneNo value="9752704505" disabled>
+                    <mat-icon matSuffix>phone</mat-icon>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="example-full-width">
+                    <mat-label>Your Name</mat-label>
+                    <input matInput #name value="Rahul" disabled>
+                    <mat-icon matSuffix>face</mat-icon>
+                </mat-form-field>
+            </div>
+
+
+
+            <mat-form-field appearance="outline" class="example-full-width">
+                <mat-label> Shop Address</mat-label>
+                <input matInput placeholder="Complete address" formControlName="firstCtrl" required>
+            </mat-form-field>
+
+            <!-- ........................................... -->
+            <mat-form-field appearance="outline" class="example-full-width">
+                <mat-label>City</mat-label>
+                <input matInput placeholder="Ex. San Francisco" formControlName="firstCtrl" required>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>State</mat-label>
+                <mat-select formControlName="firstCtrl" required>
+                    <mat-option>select</mat-option>
+                    <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="example-full-width">
+                <mat-label>Postal Code</mat-label>
+                <input type="number" matInput #postalCode minlength="7" maxlength="6" placeholder="Ex. 94105" formControlName="firstCtrl" required>
+                <mat-hint align="end">{{postalCode.value.length}} / 6</mat-hint>
+            </mat-form-field>
+
+            <section class="example-section">
+                <label class="example-margin">Home Delivery:</label>
+                <mat-radio-group>
+                    <mat-radio-button class="example-margin" value="yes">Yes</mat-radio-button>
+                    <mat-radio-button class="example-margin" value="no">No</mat-radio-button>
+                </mat-radio-group>
+            </section>
+
+            <div style="float:inherit; margin-top: 2%;">
+                <button style="width: 40%; padding: 1%;" mat-flat-button color="warn" matStepperNext>Next</button>
+            </div>
+
+        </form>
+    </mat-step>
+
+
+    <!-- .......................Second Step..................................... -->
+
+
+    <mat-step [stepControl]="secondFormGroup">
+
+        <form [formGroup]="secondFormGroup" fxLayoutAlign="start center" fxLayout="column">
+            <ng-template matStepLabel>verify</ng-template>
+
+            <mat-form-field appearance="outline" class="example-full-width">
+                <mat-label>Opening Time</mat-label>
+                <input onkeydown="return false" type="time" matInput #Time placeholder="10:30 Am" formControlName="secondCtrl" required>
+
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="example-full-width">
+                <mat-label>Closing Time</mat-label>
+                <input onkeydown="return false" type="time" matInput #time placeholder="10:30 Am" formControlName="secondCtrl" required>
+
+            </mat-form-field>
+
+            <mat-form-field class="example-chip-list" fxFlex>
+                <mat-label>Favorite types</mat-label>
+                <mat-chip-list #chipList aria-label="type selection">
+                    <mat-chip *ngFor="let type of types" [selectable]="selectable" [removable]="removable" (removed)="remove(type)">
+                        {{type}}
+                        <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                    </mat-chip>
+                    <input placeholder="garments..." #typeInput [formControl]="typeCtrl" [matAutocomplete]="auto" [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes" (matChipInputTokenEnd)="add($event)">
+                </mat-chip-list>
+                <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+                    <mat-option *ngFor="let type of filteredTypes | async" [value]="type">
+                        {{type}}
+                    </mat-option>
+                </mat-autocomplete>
+            </mat-form-field>
+
+
+            <div>
+                <button mat-flat-button color="warn">Send Otp</button>
+            </div>
+
+            <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+            </div>
+
+        </form>
+    </mat-step>
+
+    <mat-step>
+        <form [formGroup]="thirdFormGroup" label="Finish" fxLayoutAlign="center center" fxLayout="column">
+            <ng-template matStepLabel>Finish</ng-template>
+
+
+            <mat-form-field appearance="outline" class="example-full-width">
+                <mat-label>Refral's Phone no.</mat-label>
+                <input type="number" matInput #phoneNo minlength="10" maxlength="10" placeholder="Ex. 94105" formControlName="thirdCtrl" required>
+                <mat-hint align="end">{{phoneNo.value.length}} / 10 </mat-hint>
+            </mat-form-field>
+
+            <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-flat-button color="warn">Register</button>
+            </div>
+        </form>
+    </mat-step>
+</mat-horizontal-stepper>

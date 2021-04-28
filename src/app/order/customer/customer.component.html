@@ -1,0 +1,63 @@
+<!-- customer......................... -->
+
+
+<mat-card class="example-card">
+
+    <mat-card-header fxLayoutAlign="center center">
+        <mat-card-title>Order</mat-card-title>
+        <mat-card-subtitle>Payment</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+
+        <!-- ......every thing here -->
+        <section fxLayoutAlign="center center" fxLayout="column">
+            <form>
+                <mat-form-field appearance="outline">
+                    <mat-label>TO </mat-label>
+                    <input type="tel" maxlength="10" matInput #phone>
+                    <mat-icon matSuffix>phone</mat-icon>
+                </mat-form-field>
+                <br>
+                <button mat-flat-button color="warn" class="selectbtn" type="submit">select</button>
+            </form>
+        </section>
+
+        <section>
+            <br><br>
+
+            <form fxLayout="column" fxLayoutAlign=" center center" fxLayoutGap="10px">
+                <mat-form-field>
+                    <mat-label>Shop Name </mat-label>
+                    <input matInput #name disabled value="kirana">
+                    <mat-icon color="warn" matSuffix>shop</mat-icon>
+                </mat-form-field>
+
+
+                <mat-form-field appearance="outline">
+                    <mat-label> Payment Rs</mat-label>
+                    <input matInput>
+                    <mat-icon matSuffix>payments</mat-icon>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Benifit%</mat-label>
+                    <input matInput type="number" class="example-right-align">
+                    <span matSuffix>%</span>
+                </mat-form-field>
+            </form>
+        </section>
+    </mat-card-content>
+    <mat-card-actions style="text-align: center;">
+        <div class="container">
+            <div class="animated">Slide to unlock</div>
+            <div class="thumb">
+                <span class="bars2"></span>
+                <span class="bars"></span>
+                <span class="bar"></span>
+                <span class="triangles2"></span>
+                <span class="triangles"></span>
+                <span class="triangle"></span>
+            </div>
+        </div>
+    </mat-card-actions>
+</mat-card>

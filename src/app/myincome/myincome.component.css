@@ -1,0 +1,68 @@
+.gradient-green {
+    background: #2e7d32!important;
+    background: linear-gradient( 50deg, #c5d429, #2e7d32)!important;
+    color: #fff!important;
+}
+
+.mat-focus-indicator,
+.mat-mdc-focus-indicator {
+    position: relative;
+}
+
+.p-2 {
+    padding: .5rem!important;
+}
+
+.mat-icon {
+    background-repeat: no-repeat;
+    display: inline-block;
+    fill: currentColor;
+    height: 24px;
+    width: 24px;
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+}
+
+
+/* ........................orange........... */
+
+.gradient-orange {
+    background: #ff7043!important;
+    background: linear-gradient( 50deg, #ffd86f, #ff7043)!important;
+    color: #fff!important;
+}
+
+
+/* .................red............... */
+
+.gradient-red {
+    background: #d50000!important;
+    background: linear-gradient( 50deg, #ff9e80, #d50000)!important;
+    color: #fff!important;
+}
+
+
+/* .................pink......... */
+
+.gradient-pink {
+    background: #e91e63!important;
+    background: linear-gradient( 50deg, #f59e99, #e91e63)!important;
+    color: #fff!important;
+}
+
+
+/* ......copied end */

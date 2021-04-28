@@ -1,0 +1,17 @@
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover,
+a:active {
+    color: lightgray;
+}
+
+.mat-toolbar {
+    /* linear-gradient(90deg, rgb(38, 149, 232) 0%, 27.6066%, rgb(36, 103, 174) 55.2133%, 77.6066%, rgb(26, 79, 142) 100%); */
+    color: #fff;
+    background: linear-gradient(to right, rgb(27, 185, 187), rgb(15, 223, 250));
+    /* background: black; */
+    border-radius: 0px 0px 10% 10%;
+}

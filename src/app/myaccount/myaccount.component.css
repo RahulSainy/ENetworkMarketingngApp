@@ -1,0 +1,41 @@
+.bodybackground {
+    background: #1FA2FF;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #A6FFCB, #12D8FA, #1FA2FF);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #A6FFCB, #12D8FA, #1FA2FF);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+img {
+    border-radius: 50%;
+    width: 95px;
+    height: 95px;
+    border: 1px solid rgba(0, 0, 0, .12);
+    object-fit: contain;
+}
+
+.header {
+    background: #303f9f;
+    /* padding: 10px; */
+    color: white;
+}
+
+mat-card-title {
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+.example-full-width {
+    width: -webkit-fill-available;
+}
+
+.editform {
+    margin: 5%;
+}

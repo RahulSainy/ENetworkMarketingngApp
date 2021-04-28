@@ -1,0 +1,82 @@
+<div>
+    <mat-card class="bodybackground" fxLayout="row" fxLayoutAlign="start ">
+        <img src="https://media-exp1.licdn.com/dms/image/C5603AQHTlHLxVoytZQ/profile-displayphoto-shrink_200_200/0/1598470972039?e=1624492800&v=beta&t=9pVQPJmuEygoTLAula2zj5o5qNZF5GTtrEfJhcW4DD0" alt="" /> &nbsp;&nbsp;&nbsp;&nbsp;
+        <div>
+            <h1>Rahul Saini &nbsp;</h1>
+            <h1>9752704505</h1>
+
+            <br />
+        </div>
+    </mat-card>
+    <br />
+    <mat-card>
+        <div class="header">
+            <mat-card-header>
+                <mat-card-title>Edit Your Data:</mat-card-title>
+            </mat-card-header>
+        </div>
+        <br />
+        <form class="editform">
+            <mat-form-field class="example-full-width">
+                <mat-label>Full Name</mat-label>
+                <input matInput placeholder="Last name, First name" required />
+            </mat-form-field>
+
+            &nbsp;
+
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Your birthdate" [matDatepicker]="picker" [max]="maxDate" ngModel name="birthdate" required />
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
+            &nbsp;
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Address</mat-label>
+                <input matInput placeholder="Complete address" required />
+            </mat-form-field>
+
+            &nbsp;
+
+            <mat-form-field appearance="outline" class="example-full-width">
+                <mat-label>City</mat-label>
+                <input matInput placeholder="Ex. San Francisco" required />
+            </mat-form-field>
+
+            &nbsp;
+
+            <mat-form-field appearance="outline" class="example-full-width">
+                <mat-label>State</mat-label>
+                <mat-select required>
+                    <mat-option>None</mat-option>
+                    <mat-option *ngFor="let state of states" [value]="state">{{ state }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            &nbsp;
+
+            <mat-form-field appearance="outline" class="example-full-width">
+                <mat-label>Postal Code</mat-label>
+                <input type="number" matInput #postalCode minlength="7" maxlength="6" placeholder="Ex. 94105" required />
+                <mat-hint align="end">{{ postalCode.value.length }} / 6</mat-hint>
+            </mat-form-field>
+
+            <div style="float: right; margin-bottom: 9%">
+                <button mat-flat-button color="primary">Update</button>
+            </div>
+
+            &nbsp;
+            <mat-form-field appearance="outline" class="example-full-width">
+                <mat-label>Phone No.</mat-label>
+                <input type="number" matInput #phoneNo minlength="10" maxlength="10" placeholder="Ex. 94105" required />
+                <mat-hint align="end">{{ phoneNo.value.length }} / 10 </mat-hint>
+            </mat-form-field>
+            <div>
+                <button mat-flat-button color="warn">Send Otp</button>
+            </div>
+        </form>
+    </mat-card>
+
+
+</div>
